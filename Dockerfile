@@ -1,6 +1,7 @@
 FROM ubuntu:14.04
 RUN apt-get -q update && \
-    apt-get -y install build-essential vim-nox vim-doc git bash-completion && \
+    apt-get -y install build-essential vim-nox vim-doc git bash-completion python3-pip && \
+    pip install virtualenv && pip install virtualenvwrapper && \
     useradd dev --comment "Software development user." --create-home --shell /bin/bash && \
     mkdir /home/dev/.vim /home/dev/project -p && \
     echo ". /etc/bash_completion" >> /home/dev/.bashrc
